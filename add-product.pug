@@ -1,0 +1,20 @@
+extends layout/layouts.pug
+//- This is the content hook
+block content
+        header.main-header
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href='/') Shop
+                    li.main-header__item
+                         a.active(href='/admin/add-product' style="color: black;") Add Product
+        main
+            form.product-form(action='/admin/add-product' method='POST')
+                .form-control
+                        label(for='title' style="color: black;") Title
+                        input#title(type='text' name='title')
+                        label(for='color' style="color: black;") Color
+                        input#color(type='text' name='color')
+                        label(for='size' style="color: black;") Size
+                        input#size(type='text' name='size')
+                button.btn(type='submit') Add Product
